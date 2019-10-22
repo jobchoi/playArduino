@@ -2,9 +2,10 @@
 #define PORT8   8;
 unsigned int sw = PORT8;
 unsigned int led = PORT10;
-  
+unsigned int curent;  
 void setup() {
   // put your setup code here, to run once:
+  Serial.begin(9600);
 
   pinMode(sw ,INPUT);
   pinMode(led, OUTPUT);
@@ -12,11 +13,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite(led, LOW);
+   
+   curent = digitalRead(sw);
   
-  if(digitalRead(sw) == LOW){
-    digitalWrite(led, HIGH);
-  } else{
+  Serial.println(curent);
+  
+  if(digitalRead(sw) == HIGH){
     digitalWrite(led, LOW);
+  } else{
+    digitalWrite(led, HIGH);
   }
 }
