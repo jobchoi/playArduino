@@ -38,9 +38,7 @@ int swVal1 = digitalRead(sw1);
 int swVal2 = digitalRead(sw2);
 int swVal3 = digitalRead(sw3);
   
-  analogWrite(redLed, val);  
-  
- 
+  analogWrite(redLed, val);    
 
 //  if(swVal1 == HIGH){
 //    digitalWrite(threeLED1, 50);
